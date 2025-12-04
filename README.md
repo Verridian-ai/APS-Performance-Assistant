@@ -1,8 +1,16 @@
 # APS Performance Assistant
 
-![Project Logo](frontend/public/logo.png)
+<p align="center">
+  <img src="frontend/public/logo.png" alt="APS Performance Assistant Logo" width="120" height="120">
+</p>
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT) [![Next.js](https://img.shields.io/badge/Next.js-14-black)](https://nextjs.org/) [![FastAPI](https://img.shields.io/badge/FastAPI-0.109-009688)](https://fastapi.tiangolo.com/) [![Python](https://img.shields.io/badge/Python-3.10+-blue)](https://www.python.org/) [![Cloud Run](https://img.shields.io/badge/Google-Cloud_Run-4285F4)](https://cloud.google.com/run)
+<p align="center">
+  <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT"></a>
+  <a href="https://nextjs.org/"><img src="https://img.shields.io/badge/Next.js-14-black" alt="Next.js"></a>
+  <a href="https://fastapi.tiangolo.com/"><img src="https://img.shields.io/badge/FastAPI-0.109-009688" alt="FastAPI"></a>
+  <a href="https://www.python.org/"><img src="https://img.shields.io/badge/Python-3.10+-blue" alt="Python"></a>
+  <a href="https://cloud.google.com/run"><img src="https://img.shields.io/badge/Google-Cloud_Run-4285F4" alt="Cloud Run"></a>
+</p>
 
 A sophisticated AI-powered assistant designed to help Australian Public Service (APS) employees navigate their career advancement. Leveraging the **APS Integrated Leadership System (ILS)** and **Work Level Standards (WLS)**, this tool provides evidence-based coaching, gap analysis, and rigorous assessment support.
 
@@ -24,30 +32,20 @@ The system is built on a modern microservices architecture, separating the high-
 
 ```mermaid
 graph TD
-    User[User] -->|HTTPS| CDN[Cloud CDN]
-    CDN -->|Next.js| FE[Frontend App\n(Cloud Run)]
-    FE -->|REST API| BE[Backend API\n(Cloud Run)]
-    
-    subgraph Backend
-        API[FastAPI Router]
-        Auth[Auth Service\n(OAuth2 + JWT)]
-        Agent[PydanticAI Agent]
-        RAG[Cognee RAG Engine]
-        
-        API --> Auth
-        API --> Agent
-        Agent --> RAG
+    User[👤 User] -->|HTTPS| FE[Frontend - Next.js]
+    FE -->|REST API| BE[Backend - FastAPI]
+
+    subgraph Backend Services
+        BE --> Auth[🔐 Auth Service]
+        BE --> Agent[🤖 PydanticAI Agent]
+        Agent --> RAG[📚 Cognee RAG]
     end
-    
-    subgraph Data
-        DB[(Neon Postgres)]
-        Vec[(Vector Store)]
-        Docs[ILS Framework Docs]
+
+    subgraph Data Layer
+        Auth --> DB[(🗄️ Neon Postgres)]
+        RAG --> Vec[(Vector Store)]
+        RAG --> Docs[ILS Framework]
     end
-    
-    Auth --> DB
-    RAG --> Vec
-    RAG --> DB
 ```
 
 ## 🛠️ Tech Stack
@@ -79,8 +77,8 @@ graph TD
 
 1.  **Clone the repository**
     ```bash
-    git clone https://github.com/your-org/aps-performance-assistant.git
-    cd aps-performance-assistant
+    git clone https://github.com/Verridian-ai/APS-Performance-Assistant.git
+    cd APS-Performance-Assistant
     ```
 
 2.  **Backend Setup**
