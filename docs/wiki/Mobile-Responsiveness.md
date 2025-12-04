@@ -28,18 +28,21 @@ This document provides comprehensive documentation of the responsive design syst
 
 The APS Performance Assistant uses a **Mobile-First** design strategy:
 
-```
-┌─────────────────────────────────────────────────────────────┐
-│                     DESIGN FLOW                              │
-├─────────────────────────────────────────────────────────────┤
-│                                                              │
-│  📱 Mobile      →    📱 Tablet      →    🖥️ Desktop          │
-│  (Default)          (sm: / md:)         (lg: / xl:)         │
-│                                                              │
-│  Base styles        Add tablet         Add desktop          │
-│  applied first      modifications      enhancements         │
-│                                                              │
-└─────────────────────────────────────────────────────────────┘
+```mermaid
+flowchart LR
+    subgraph Mobile["📱 Mobile (Default)"]
+        M1["Base styles applied first"]
+    end
+
+    subgraph Tablet["📱 Tablet (sm: / md:)"]
+        T1["Add tablet modifications"]
+    end
+
+    subgraph Desktop["🖥️ Desktop (lg: / xl:)"]
+        D1["Add desktop enhancements"]
+    end
+
+    Mobile --> Tablet --> Desktop
 ```
 
 **Why Mobile-First?**
@@ -56,6 +59,18 @@ The APS Performance Assistant uses a **Mobile-First** design strategy:
 
 ### Tailwind CSS Breakpoints
 
+```mermaid
+flowchart LR
+    subgraph Breakpoints["📏 Breakpoint Scale"]
+        direction LR
+        BASE["📱 0px<br/>(base)"] --> SM["📱 640px<br/>(sm:)"]
+        SM --> MD["📱 768px<br/>(md:)"]
+        MD --> LG["💻 1024px<br/>(lg:)"]
+        LG --> XL["🖥️ 1280px<br/>(xl:)"]
+        XL --> XXL["🖥️ 1536px<br/>(2xl:)"]
+    end
+```
+
 | Prefix | Min Width | Typical Devices | Use Case |
 |--------|-----------|-----------------|----------|
 | (none) | `0px` | iPhone SE, small Androids | Base mobile styles |
@@ -67,23 +82,16 @@ The APS Performance Assistant uses a **Mobile-First** design strategy:
 
 ### How Breakpoints Work
 
-```css
-/* Mobile-first example */
-.element {
-  width: 100%;           /* Mobile: full width */
-}
+```mermaid
+flowchart TB
+    subgraph CSS["📐 Width at Each Breakpoint"]
+        MOBILE["📱 Mobile<br/>width: 100%"]
+        TABLET["📱 sm: 640px+<br/>width: 50%"]
+        DESKTOP["🖥️ lg: 1024px+<br/>width: 33.333%"]
+    end
 
-@media (min-width: 640px) {
-  .element {
-    width: 50%;          /* sm: half width */
-  }
-}
-
-@media (min-width: 1024px) {
-  .element {
-    width: 33.333%;      /* lg: third width */
-  }
-}
+    MOBILE -->|"screen grows"| TABLET
+    TABLET -->|"screen grows"| DESKTOP
 ```
 
 **Tailwind Equivalent:**
@@ -112,6 +120,18 @@ The APS Performance Assistant uses a **Mobile-First** design strategy:
 ## 🧩 Component Responsiveness
 
 ### Sidebar Navigation
+
+```mermaid
+flowchart LR
+    subgraph Mobile["📱 Mobile < 1024px"]
+        M_HIDDEN["Sidebar Hidden"] -->|"tap menu"| M_VISIBLE["Sidebar Slides In"]
+        M_VISIBLE -->|"tap outside"| M_HIDDEN
+    end
+
+    subgraph Desktop["🖥️ Desktop ≥ 1024px"]
+        D_VISIBLE["Sidebar Always Visible"]
+    end
+```
 
 | Screen Size | Behavior | Implementation |
 |-------------|----------|----------------|
@@ -181,6 +201,27 @@ The APS Performance Assistant uses a **Mobile-First** design strategy:
 
 ### Dashboard & Cards
 
+```mermaid
+flowchart TB
+    subgraph Mobile["📱 Mobile"]
+        M1["Card 1"]
+        M2["Card 2"]
+        M3["Card 3"]
+        M1 --- M2 --- M3
+    end
+
+    subgraph Tablet["📱 Tablet"]
+        direction LR
+        T1["Card 1"] --- T2["Card 2"]
+        T3["Card 3"]
+    end
+
+    subgraph Desktop["🖥️ Desktop"]
+        direction LR
+        D1["Card 1"] --- D2["Card 2"] --- D3["Card 3"]
+    end
+```
+
 | Screen Size | Grid Columns | Card Style |
 |-------------|--------------|------------|
 | Mobile | 1 column | Full width, stacked |
@@ -204,6 +245,17 @@ The APS Performance Assistant uses a **Mobile-First** design strategy:
 ## 👆 Touch Targets & Accessibility
 
 ### Minimum Touch Target Sizes
+
+```mermaid
+flowchart TB
+    subgraph TouchTargets["👆 Touch Target Standards"]
+        direction LR
+        BTN["🔘 Buttons<br/>44px × 44px"]
+        ICON["🎯 Icons<br/>44px × 44px"]
+        LIST["📋 List Items<br/>44px height"]
+        INPUT["📝 Inputs<br/>48px height"]
+    end
+```
 
 All interactive elements follow accessibility guidelines:
 
@@ -266,6 +318,20 @@ All interactive elements follow accessibility guidelines:
 
 ### Supported Browsers
 
+```mermaid
+flowchart LR
+    subgraph Supported["✅ Supported Browsers"]
+        CHROME["🌐 Chrome 90+"]
+        SAFARI["🧭 Safari 14+"]
+        FIREFOX["🦊 Firefox 88+"]
+        EDGE["📐 Edge 90+"]
+    end
+
+    subgraph NotSupported["❌ Not Supported"]
+        IE["💀 Internet Explorer"]
+    end
+```
+
 | Browser | Version | Platform | Status |
 |---------|---------|----------|--------|
 | **Chrome** | 90+ | Desktop, Android | ✅ Fully Supported |
@@ -277,6 +343,16 @@ All interactive elements follow accessibility guidelines:
 | Internet Explorer | All | N/A | ❌ Not Supported |
 
 ### Feature Detection
+
+```mermaid
+flowchart LR
+    subgraph Features["🔧 Progressive Enhancement"]
+        GRID["CSS Grid"] -->|fallback| FLEX["Flexbox"]
+        BLUR["Backdrop Blur"] -->|fallback| SOLID["Solid Background"]
+        VARS["CSS Variables"] -->|fallback| STATIC["Static Colors"]
+        SCROLL["Smooth Scroll"] -->|fallback| INSTANT["Instant Scroll"]
+    end
+```
 
 The application gracefully degrades for older browsers:
 
@@ -292,6 +368,19 @@ The application gracefully degrades for older browsers:
 ## 📲 PWA (Progressive Web App) Features
 
 ### "Add to Home Screen" Support
+
+```mermaid
+flowchart TB
+    subgraph PWA["📲 PWA Installation"]
+        IOS["🍎 iOS Safari<br/>Share → Add to Home Screen"]
+        ANDROID["🤖 Android Chrome<br/>Menu → Add to Home Screen"]
+        DESKTOP["🖥️ Desktop Chrome<br/>Install icon in address bar"]
+    end
+
+    IOS --> APP1["📱 Standalone App Icon"]
+    ANDROID --> APP2["📱 APK-like Experience"]
+    DESKTOP --> APP3["🖥️ Desktop App Window"]
+```
 
 Users can install the APS Performance Assistant as a native-like app:
 

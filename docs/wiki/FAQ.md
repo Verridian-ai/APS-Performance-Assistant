@@ -1,11 +1,33 @@
 # Frequently Asked Questions
 
+---
+
 ## General Questions
 
 ### What is the APS Performance Assistant?
+
+```mermaid
+flowchart LR
+    USER["👤 APS Employee"] --> APP["🤖 APS Performance<br/>Assistant"]
+    APP --> ILS["📚 ILS Framework"]
+    APP --> GPT["🧠 GPT-5.0"]
+    APP --> HELP["✅ Career Guidance"]
+```
+
 The APS Performance Assistant is an AI-powered tool that helps Australian Public Service employees with career advancement. It uses the official Integrated Leadership System (ILS) framework to provide guidance on performance goals, self-assessments, and capability development.
 
 ### Who is this tool for?
+
+```mermaid
+flowchart TB
+    subgraph Users["👥 Target Users"]
+        APS["👤 APS Employees<br/>(APS 1 - SES)"]
+        LEAD["👤 Team Leaders"]
+        HR["👤 HR Professionals"]
+        BROAD["👤 Broadband Candidates"]
+    end
+```
+
 This tool is designed for:
 - APS employees at all levels (APS 1 through SES)
 - Team leaders helping staff with performance agreements
@@ -66,9 +88,31 @@ Yes. You can delete individual conversations or your entire history from the set
 ## ILS Framework Questions
 
 ### What is the ILS?
+
+```mermaid
+flowchart TB
+    subgraph ILS["📚 Integrated Leadership System"]
+        APS1["APS 1"] --> APS2["APS 2"] --> APS3["APS 3"]
+        APS3 --> APS4["APS 4"] --> APS5["APS 5"] --> APS6["APS 6"]
+        APS6 --> EL1["EL 1"] --> EL2["EL 2"] --> SES["SES"]
+    end
+```
+
 The Integrated Leadership System (ILS) is the Australian Government's capability framework. It defines the skills, knowledge, and behaviors expected at each APS level across five capability clusters.
 
 ### What are the five capability clusters?
+
+```mermaid
+flowchart LR
+    subgraph Clusters["📦 5 Capability Clusters"]
+        SST["🎯 Shapes Strategic<br/>Thinking"]
+        AR["✅ Achieves<br/>Results"]
+        EPI["⭐ Exemplifies Personal<br/>Integrity"]
+        CPWR["🤝 Cultivates Productive<br/>Working Relationships"]
+        CWI["📢 Communicates<br/>with Influence"]
+    end
+```
+
 1. **Shapes Strategic Thinking** - Vision, strategy, and innovation
 2. **Achieves Results** - Delivery, planning, and accountability
 3. **Exemplifies Personal Integrity** - Ethics, self-awareness, and resilience
@@ -76,6 +120,16 @@ The Integrated Leadership System (ILS) is the Australian Government's capability
 5. **Communicates with Influence** - Negotiation and persuasion
 
 ### How do capabilities change between levels?
+
+```mermaid
+flowchart LR
+    subgraph Progression["📈 Level Progression"]
+        IND["👤 Individual<br/>Tasks"] --> TEAM["👥 Team<br/>Coordination"]
+        TEAM --> ORG["🏢 Organizational<br/>Impact"]
+        ORG --> GOV["🏛️ Whole-of-Government<br/>Leadership"]
+    end
+```
+
 As you progress through APS levels:
 - **Scope** increases (individual → team → organization → whole-of-government)
 - **Complexity** increases
@@ -83,6 +137,14 @@ As you progress through APS levels:
 - **Leadership** expectations increase
 
 ### What's the difference between a capability and a behavioral indicator?
+
+```mermaid
+flowchart TB
+    CAP["📦 Capability<br/>'Achieves Results'"] --> BI1["📋 Behavioral Indicator 1<br/>'Identifies and prioritizes tasks'"]
+    CAP --> BI2["📋 Behavioral Indicator 2<br/>'Delivers quality outcomes'"]
+    CAP --> BI3["📋 Behavioral Indicator 3<br/>'Manages resources effectively'"]
+```
+
 - **Capability**: A broad skill or attribute (e.g., "Achieves Results")
 - **Behavioral Indicator**: A specific observable behavior that demonstrates the capability (e.g., "Identifies and prioritizes competing tasks")
 

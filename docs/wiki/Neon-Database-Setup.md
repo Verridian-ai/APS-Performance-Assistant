@@ -8,6 +8,19 @@ This guide walks you through setting up a Neon Postgres database for the APS Per
 
 ---
 
+## 📊 Setup Overview
+
+```mermaid
+flowchart LR
+    A["1️⃣ Create<br/>Account"] --> B["2️⃣ Verify<br/>Email"]
+    B --> C["3️⃣ Create<br/>Project"]
+    C --> D["4️⃣ Get Connection<br/>String"]
+    D --> E["5️⃣ Add to<br/>.env File"]
+    E --> F["6️⃣ Verify<br/>Connection"]
+```
+
+---
+
 ## 📑 Table of Contents
 
 1. [What is Neon?](#-what-is-neon)
@@ -23,6 +36,21 @@ This guide walks you through setting up a Neon Postgres database for the APS Per
 ---
 
 ## 🌟 What is Neon?
+
+```mermaid
+flowchart TB
+    subgraph Neon["🐘 Neon Postgres"]
+        DB[(Database)]
+        USERS["👥 Users Table"]
+        CHATS["💬 Chats Table"]
+        SESSIONS["🔐 Sessions Table"]
+    end
+
+    APP["🤖 APS Performance<br/>Assistant"] --> Neon
+    DB --> USERS
+    DB --> CHATS
+    DB --> SESSIONS
+```
 
 **Neon** is a fully managed serverless PostgreSQL database service. Think of it as a place where your application stores all its data (users, conversations, settings) in the cloud.
 

@@ -2,6 +2,24 @@
 
 This page provides example prompts to help you get the most out of the APS Performance Assistant.
 
+---
+
+## 🗺️ Prompt Categories
+
+```mermaid
+flowchart TB
+    subgraph Categories["📚 Prompt Categories"]
+        GOALS["📝 Writing<br/>Performance Goals"]
+        GAP["📊 Gap<br/>Analysis"]
+        STAR["✍️ STAR<br/>Examples"]
+        CAP["🎯 Capability<br/>Understanding"]
+        CAREER["🚀 Career<br/>Advancement"]
+        REVIEW["📋 Document<br/>Review"]
+    end
+```
+
+---
+
 ## 📝 Writing Performance Goals
 
 ### SMART Goals
@@ -175,6 +193,19 @@ How do I use the ILS Self-Assessment Tool?
 ```
 
 ## 💡 Tips for Better Prompts
+
+```mermaid
+flowchart LR
+    subgraph Tips["💡 Better Prompts"]
+        T1["1️⃣ Specify<br/>your level"]
+        T2["2️⃣ Include<br/>context"]
+        T3["3️⃣ Ask for<br/>specifics"]
+        T4["4️⃣ Iterate<br/>& refine"]
+        T5["5️⃣ Share<br/>drafts"]
+    end
+
+    T1 --> T2 --> T3 --> T4 --> T5
+```
 
 1. **Specify your level**: Always mention your current and target APS level
 2. **Include context**: Share what you're working on

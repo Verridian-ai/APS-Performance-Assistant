@@ -2,29 +2,59 @@
 
 This guide explains how to add new documents to the APS Performance Assistant knowledge base.
 
+---
+
+## 📊 Overview
+
+```mermaid
+flowchart LR
+    subgraph Input["📄 Input"]
+        PDF["PDF Files"]
+        DOCX["Word Docs"]
+        TXT["Text Files"]
+    end
+
+    subgraph Pipeline["⚙️ Ingestion Pipeline"]
+        PARSE["1. Parse"]
+        CHUNK["2. Chunk"]
+        EMBED["3. Embed"]
+        GRAPH["4. Graph"]
+    end
+
+    subgraph Output["💾 Knowledge Base"]
+        VECTOR["Vector Store"]
+        KNOWLEDGE["Knowledge Graph"]
+    end
+
+    Input --> PARSE --> CHUNK --> EMBED --> GRAPH --> Output
+```
+
+---
+
 ## 📁 The Documents Folder
 
 All source documents are stored in the `documents/` folder at the project root:
 
-```
-documents/
-├── APS1_Profile_ILS.pdf
-├── APS2_Profile_ILS.pdf
-├── APS3_Profile_ILS.pdf
-├── APS4_Profile_ILS.pdf
-├── APS5_Profile_ILS.pdf
-├── APS6_Profile_ILS.pdf
-├── EL1_Profile_ILS.pdf
-├── EL2_Profile_ILS.pdf
-├── SES1_Profile_ILS.pdf
-├── SES2_Profile_ILS.pdf
-├── SES3_Profile_ILS.pdf
-├── ILS_SelfAssessment_Tool.pdf
-├── ILS_Comparative_Guide.pdf
-└── APS_Workbook_Template.docx
+```mermaid
+flowchart TB
+    subgraph Docs["📁 documents/"]
+        APS["📄 APS Profiles<br/>APS1-APS6_Profile_ILS.pdf"]
+        EL["📄 EL Profiles<br/>EL1-EL2_Profile_ILS.pdf"]
+        SES["📄 SES Profiles<br/>SES1-SES3_Profile_ILS.pdf"]
+        TOOLS["📄 Tools<br/>ILS_SelfAssessment_Tool.pdf<br/>ILS_Comparative_Guide.pdf"]
+    end
 ```
 
+---
+
 ## 📥 Adding New Documents
+
+```mermaid
+flowchart LR
+    A["1️⃣ Prepare<br/>Documents"] --> B["2️⃣ Copy to<br/>Folder"]
+    B --> C["3️⃣ Run<br/>Pipeline"]
+    C --> D["4️⃣ Verify<br/>Success"]
+```
 
 ### Step 1: Prepare Your Documents
 
@@ -74,6 +104,17 @@ The pipeline will output progress:
 
 ## 🔄 Re-Ingesting Documents
 
+```mermaid
+flowchart LR
+    subgraph Options["🔄 Re-ingestion Options"]
+        FULL["🔄 Full Reset<br/>--reset flag"]
+        INCR["➕ Incremental<br/>--incremental flag"]
+    end
+
+    FULL --> RESULT1["Clears & rebuilds<br/>entire knowledge base"]
+    INCR --> RESULT2["Only processes<br/>new files"]
+```
+
 To update the knowledge base after modifying documents:
 
 ```bash
@@ -84,7 +125,27 @@ python -m app.ingestion.pipeline_v2 --reset
 python -m app.ingestion.pipeline_v2 --incremental
 ```
 
+---
+
 ## 📋 Document Recommendations
+
+```mermaid
+flowchart TB
+    subgraph Include["✅ DO Include"]
+        ILS["📄 ILS Profiles"]
+        WLS["📄 Work Level Standards"]
+        DEPT["📄 Department Frameworks"]
+        ROLE["📄 Role Descriptions"]
+        BROAD["📄 Broadband Guides"]
+    end
+
+    subgraph Exclude["❌ DON'T Include"]
+        PERF["🚫 Personal Reviews"]
+        HR["🚫 Confidential HR Docs"]
+        PII["🚫 Documents with PII"]
+        UNRELA["🚫 Unrelated Policies"]
+    end
+```
 
 ### Best Practices
 
@@ -109,6 +170,16 @@ python -m app.ingestion.pipeline_v2 --incremental
 4. **Version Control**: Use the latest versions of framework documents
 
 ## 🔧 Troubleshooting
+
+```mermaid
+flowchart TB
+    subgraph Errors["🔧 Common Errors"]
+        E1["No documents found"] --> S1["Check documents/ folder"]
+        E2["Failed to parse PDF"] --> S2["Ensure PDF has text<br/>not scanned images"]
+        E3["Embedding failed"] --> S3["Check OpenAI API key<br/>and credits"]
+        E4["Database error"] --> S4["Verify DATABASE_URL<br/>in .env"]
+    end
+```
 
 ### "No documents found"
 ```bash
