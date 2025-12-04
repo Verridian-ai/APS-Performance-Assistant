@@ -1,0 +1,13 @@
+docling
+cognee
+pydantic-ai
+langgraph
+google-generativeai
+python-dotenv
+fastapi
+uvicorn
+pydantic
+lancedb
+openai
+protego>=0.1
+playwright>=1.9.0
