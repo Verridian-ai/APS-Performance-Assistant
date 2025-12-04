@@ -79,8 +79,18 @@ The APS Performance Assistant is an **AI-powered career coach** for Australian P
 
 ### Powered by AI + Official Frameworks
 
+```mermaid
+flowchart LR
+    USER["👤 User"] --> FRONTEND["🌐 Next.js"]
+    FRONTEND --> BACKEND["⚡ FastAPI"]
+    BACKEND --> AGENT["🤖 PydanticAI"]
+    AGENT --> GPT["🧠 GPT-5.0"]
+    AGENT --> RAG["📚 Cognee RAG"]
+    RAG --> KB["📖 ILS Knowledge Base"]
+```
+
 The assistant uses:
-- **GPT-4o** for intelligent conversation
+- **GPT-5.0** for intelligent conversation (via PydanticAI)
 - **Cognee RAG** for retrieval from ILS documents
 - **Knowledge Graph** for understanding APS level relationships
 

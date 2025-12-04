@@ -2,16 +2,42 @@
 
 This guide will help you get the most out of the APS Performance Assistant.
 
+---
+
 ## 🎯 Overview
 
 The APS Performance Assistant is your AI-powered career coach for the Australian Public Service. It helps you:
+
+```mermaid
+flowchart LR
+    subgraph Features["🎯 What You Can Do"]
+        GOALS["📝 Write<br/>Performance Goals"]
+        EVIDENCE["📊 Prepare<br/>Evidence"]
+        UNDERSTAND["🎓 Understand<br/>Requirements"]
+        DRAFT["✍️ Draft<br/>Self-Assessments"]
+    end
+
+    USER["👤 You"] --> GOALS
+    USER --> EVIDENCE
+    USER --> UNDERSTAND
+    USER --> DRAFT
+```
 
 - Write effective performance goals
 - Prepare evidence for broadband advancement
 - Understand the requirements for your target APS level
 - Draft compelling self-assessments
 
+---
+
 ## 🚀 Getting Started
+
+```mermaid
+flowchart LR
+    A["1️⃣ Access App"] --> B["2️⃣ Create Account"]
+    B --> C["3️⃣ Set APS Level"]
+    C --> D["4️⃣ Start Chatting"]
+```
 
 ### 1. Accessing the Application
 
@@ -27,7 +53,7 @@ Open your browser and navigate to the application URL (provided by your administ
 
 1. Click **Start New Chat** from the home page
 2. Type your question or select a suggestion
-3. Receive AI-powered guidance based on the ILS framework
+3. Receive AI-powered guidance based on the ILS framework (powered by GPT-5.0)
 
 ## 💬 How to Ask Questions
 
@@ -48,7 +74,22 @@ Open your browser and navigate to the application URL (provided by your administ
 
 ## 🎭 The Four AI Modes
 
-The assistant automatically adapts to your needs:
+The assistant (powered by GPT-5.0 via PydanticAI) automatically adapts to your needs:
+
+```mermaid
+flowchart TB
+    INPUT["📝 Your Input"] --> ROUTER["🔀 Mode Router"]
+
+    ROUTER --> AUDITOR["🔍 Auditor Mode<br/>Review drafts"]
+    ROUTER --> INTERVIEWER["🎤 Interviewer Mode<br/>Discover evidence"]
+    ROUTER --> TRANSLATOR["🔄 Translator Mode<br/>Professional language"]
+    ROUTER --> ARCHITECT["🏗️ Architect Mode<br/>Structure documents"]
+
+    AUDITOR --> OUTPUT["💬 Response"]
+    INTERVIEWER --> OUTPUT
+    TRANSLATOR --> OUTPUT
+    ARCHITECT --> OUTPUT
+```
 
 ### 🔍 Auditor Mode
 When you share a draft, the AI reviews it against the ILS Profile for your target level.

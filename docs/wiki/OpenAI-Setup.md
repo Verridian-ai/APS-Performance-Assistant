@@ -26,19 +26,24 @@ This guide walks you through obtaining an OpenAI API key, which powers the AI ca
 
 ## 🔑 What is an OpenAI API Key?
 
-An **API key** is like a password that allows your application to communicate with OpenAI's AI models (like GPT-4o).
+An **API key** is like a password that allows your application to communicate with OpenAI's AI models (like GPT-5.0).
 
 ### How It Works
 
-```
-┌─────────────────────┐         ┌─────────────────────┐
-│  APS Performance    │         │   OpenAI Servers    │
-│     Assistant       │         │                     │
-│                     │  API    │  🧠 GPT-4o Model    │
-│  "What are the      │ ──────► │                     │
-│   APS 5 caps?"      │  Key    │  Processes request  │
-│                     │ ◄────── │  Returns response   │
-└─────────────────────┘         └─────────────────────┘
+```mermaid
+flowchart LR
+    subgraph App["🖥️ APS Performance Assistant"]
+        Q["📝 'What are the<br/>APS 5 caps?'"]
+    end
+
+    subgraph OpenAI["☁️ OpenAI Servers"]
+        GPT["🧠 GPT-5.0 Model"]
+        PROC["⚙️ Process Request"]
+    end
+
+    Q -->|"🔑 API Key"| GPT
+    GPT --> PROC
+    PROC -->|"📤 Response"| Q
 ```
 
 ### API Key Format
@@ -227,6 +232,7 @@ Prefix  Type           Random characters (long!)
 
 | Model | Approximate Cost |
 |-------|------------------|
+| GPT-5.0 | Latest model (check OpenAI pricing) |
 | GPT-4o | ~$5-10 per 1M input tokens, $15-30 per 1M output tokens |
 | GPT-4o-mini | ~$0.15 per 1M input tokens (cheaper) |
 | Embeddings | ~$0.13 per 1M tokens |
@@ -373,7 +379,7 @@ Your key now appears in the list (but the actual key is hidden):
 # OpenAI API Configuration
 # ======================
 OPENAI_API_KEY=sk-proj-aBcDeFgHiJkLmNoPqRsTuVwXyZ1234567890...
-LLM_MODEL=gpt-4o
+LLM_MODEL=gpt-5.0
 ```
 
 > ⚠️ **Important:**
@@ -578,10 +584,10 @@ Check the `LLM_MODEL` in your `.env` file. Use a valid model name:
 
 | Model Name | Description |
 |------------|-------------|
-| `gpt-4o` | Latest GPT-4 Omni (recommended) |
+| `gpt-5.0` | Latest GPT-5 model (recommended) |
+| `gpt-4o` | GPT-4 Omni |
 | `gpt-4o-mini` | Faster, cheaper GPT-4 |
 | `gpt-4-turbo` | Previous generation |
-| `gpt-3.5-turbo` | Older, cheapest option |
 
 ---
 
@@ -618,7 +624,7 @@ Before moving on, confirm:
 ## 🎉 Congratulations!
 
 You've successfully set up your OpenAI API key! Your APS Performance Assistant can now:
-- Generate intelligent responses using GPT-4o
+- Generate intelligent responses using GPT-5.0 (via PydanticAI)
 - Provide evidence-based guidance from the ILS framework
 - Help with goal setting, gap analysis, and self-assessments
 
