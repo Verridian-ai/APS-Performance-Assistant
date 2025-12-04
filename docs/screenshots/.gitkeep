@@ -42,6 +42,14 @@ This folder contains screenshots for the documentation.
 - 16-env-complete.png
 - 17-usage-limits.png
 
+### Docker Setup (`docker/`)
+- 01-download.png
+- 02-hello-world.png
+- 03-compose-file.png
+- 04-building.png
+- 05-running.png
+- 06-app-running.png
+
 ### Responsive Design (`responsive/`)
 - mobile-01-home.png
 - mobile-02-sidebar-closed.png

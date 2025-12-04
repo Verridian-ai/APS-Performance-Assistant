@@ -36,6 +36,7 @@ New to the APS Performance Assistant? Start here:
 |-------|-------------|------------|
 | [[Neon-Database-Setup]] | Set up Neon Postgres database | 🟢 Beginner |
 | [[OpenAI-Setup]] | Obtain and configure OpenAI API key | 🟢 Beginner |
+| [[Docker-Setup]] | Run with Docker containers | 🟡 Intermediate |
 | [[Document-Ingestion]] | Add APS documents to knowledge base | 🟡 Intermediate |
 
 ### 🏗️ For Developers
@@ -94,6 +95,7 @@ The assistant uses:
 | [[FAQ]] | Users | Common questions answered |
 | [[Neon-Database-Setup]] | Setup | Complete Neon Postgres setup guide |
 | [[OpenAI-Setup]] | Setup | OpenAI API key configuration |
+| [[Docker-Setup]] | Setup | Docker container deployment |
 | [[Document-Ingestion]] | Setup | Adding documents to knowledge base |
 | [[Architecture-Overview]] | Developers | System architecture and design |
 | [[Cognee-RAG-Engine]] | Developers | RAG engine technical details |

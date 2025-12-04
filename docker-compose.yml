@@ -1,0 +1,73 @@
+version: '3.8'
+
+# APS Performance Assistant - Docker Compose Configuration
+# 
+# Usage:
+#   docker compose up -d       # Start all services
+#   docker compose down        # Stop all services
+#   docker compose logs -f     # View logs
+#   docker compose build       # Rebuild images
+
+services:
+  # ===========================================
+  # Backend API Service (FastAPI + Cognee RAG)
+  # ===========================================
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: aps-backend
+    ports:
+      - "8000:8080"
+    environment:
+      - PORT=8080
+    env_file:
+      - ./backend/.env
+    volumes:
+      # Mount documents folder for RAG ingestion (read-only)
+      - ./documents:/code/documents:ro
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    networks:
+      - aps-network
+
+  # ===========================================
+  # Frontend Web Application (Next.js)
+  # ===========================================
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    container_name: aps-frontend
+    ports:
+      - "3000:8080"
+    environment:
+      - PORT=8080
+      - NEXT_PUBLIC_API_URL=http://backend:8080
+    depends_on:
+      backend:
+        condition: service_healthy
+    restart: unless-stopped
+    networks:
+      - aps-network
+
+# ===========================================
+# Networks
+# ===========================================
+networks:
+  aps-network:
+    driver: bridge
+    name: aps-network
+
+# ===========================================
+# Volumes (for future use - local dev data persistence)
+# ===========================================
+volumes:
+  backend_data:
+    name: aps-backend-data
+
