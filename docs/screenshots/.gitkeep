@@ -1,0 +1,67 @@
+# Screenshots Directory
+
+This folder contains screenshots for the documentation.
+
+## Required Screenshots
+
+### Neon Database Setup (`neon/`)
+- 01-homepage.png
+- 02-signup-button.png
+- 03-signup-options.png
+- 04-authorize.png
+- 05-verification-email.png
+- 06-email-content.png
+- 07-new-project-button.png
+- 08-project-name.png
+- 09-region-selection.png
+- 10-create-project.png
+- 11-dashboard-overview.png
+- 12-connection-section.png
+- 13-pooled-toggle.png
+- 14-copy-string.png
+- 15-env-file-location.png
+- 16-env-complete.png
+- 17-success-terminal.png
+
+### OpenAI Setup (`openai/`)
+- 01-signup-page.png
+- 02-signup-options.png
+- 03-verification-email.png
+- 04-profile-setup.png
+- 05-settings-location.png
+- 06-billing-menu.png
+- 07-add-payment.png
+- 08-account-type.png
+- 09-card-form.png
+- 10-add-credits.png
+- 11-api-keys-menu.png
+- 12-create-key-button.png
+- 13-key-config.png
+- 14-copy-key.png
+- 15-env-location.png
+- 16-env-complete.png
+- 17-usage-limits.png
+
+### Responsive Design (`responsive/`)
+- mobile-01-home.png
+- mobile-02-sidebar-closed.png
+- mobile-03-sidebar-open.png
+- mobile-04-chat-active.png
+- mobile-05-input-keyboard.png
+- tablet-01-home.png
+- tablet-02-dashboard.png
+- tablet-03-chat.png
+- desktop-01-home.png
+- desktop-02-dashboard.png
+- desktop-03-chat-sidebar.png
+- desktop-04-chat-canvas.png
+
+### Application Screenshots (`app/`)
+- home-page.png
+- login-page.png
+- register-page.png
+- dashboard.png
+- chat-empty.png
+- chat-conversation.png
+- chat-suggestions.png
+

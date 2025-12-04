@@ -1,54 +1,116 @@
 # APS Performance Assistant Wiki
 
-Welcome to the APS Performance Assistant documentation! This wiki provides comprehensive guides for users, developers, and administrators.
+<p align="center">
+  <img src="../screenshots/app/home-page.png" alt="APS Performance Assistant" width="600">
+</p>
 
-## 📚 Contents
-
-### For Users
-- [[User Guide]] - Complete guide to using the assistant
-- [[Example Prompts]] - Sample questions and use cases
-- [[FAQ]] - Frequently asked questions
-
-### For Developers
-- [[Architecture Overview]] - System design and components
-- [[Cognee RAG Engine]] - How the knowledge engine works
-- [[API Reference]] - Backend API documentation
-- [[Contributing]] - How to contribute to the project
-
-### For Administrators
-- [[Deployment Guide]] - Production deployment instructions
-- [[Document Ingestion]] - Adding new APS documents
-- [[Configuration]] - Environment variables and settings
+Welcome to the **APS Performance Assistant** documentation! This wiki provides comprehensive, beginner-friendly guides for users, developers, and administrators.
 
 ---
 
-## 🚀 Quick Links
+## 🚀 Quick Start
 
-| Resource | Description |
-|----------|-------------|
-| [GitHub Repository](https://github.com/Verridian-ai/APS-Performance-Assistant) | Source code |
-| [Issues](https://github.com/Verridian-ai/APS-Performance-Assistant/issues) | Bug reports & feature requests |
-| [README](https://github.com/Verridian-ai/APS-Performance-Assistant#readme) | Quick start guide |
+New to the APS Performance Assistant? Start here:
+
+| Step | Guide | Time |
+|------|-------|------|
+| 1️⃣ | [[Neon-Database-Setup]] - Set up your database | 15 min |
+| 2️⃣ | [[OpenAI-Setup]] - Get your API key | 10 min |
+| 3️⃣ | [[User-Guide]] - Learn how to use the app | 10 min |
+
+---
+
+## 📚 Documentation Index
+
+### 👤 For Users
+
+| Guide | Description |
+|-------|-------------|
+| [[User-Guide]] | Complete guide to using the assistant |
+| [[Example-Prompts]] | 30+ sample questions organized by use case |
+| [[FAQ]] | Frequently asked questions and answers |
+
+### 🔧 Setup Guides
+
+| Guide | Description | Difficulty |
+|-------|-------------|------------|
+| [[Neon-Database-Setup]] | Set up Neon Postgres database | 🟢 Beginner |
+| [[OpenAI-Setup]] | Obtain and configure OpenAI API key | 🟢 Beginner |
+| [[Document-Ingestion]] | Add APS documents to knowledge base | 🟡 Intermediate |
+
+### 🏗️ For Developers
+
+| Guide | Description |
+|-------|-------------|
+| [[Architecture-Overview]] | System design, tech stack, and data flow |
+| [[Cognee-RAG-Engine]] | How the knowledge engine works |
+| [[Mobile-Responsiveness]] | Responsive design specifications |
+
+### 📱 Design & UX
+
+| Guide | Description |
+|-------|-------------|
+| [[Mobile-Responsiveness]] | Breakpoints, touch targets, and PWA features |
+
+---
+
+## 🔗 Quick Links
+
+| Resource | Link |
+|----------|------|
+| 📂 GitHub Repository | [Verridian-ai/APS-Performance-Assistant](https://github.com/Verridian-ai/APS-Performance-Assistant) |
+| 🐛 Report a Bug | [Create Issue](https://github.com/Verridian-ai/APS-Performance-Assistant/issues/new) |
+| 📖 README | [View README](https://github.com/Verridian-ai/APS-Performance-Assistant#readme) |
 
 ---
 
 ## 🎯 What is APS Performance Assistant?
 
-The APS Performance Assistant is an AI-powered tool designed to help Australian Public Service employees:
+The APS Performance Assistant is an **AI-powered career coach** for Australian Public Service employees. It helps you:
 
-- ✅ Understand the Integrated Leadership System (ILS)
-- ✅ Write effective SMART goals for performance agreements
-- ✅ Prepare evidence for broadband advancement
-- ✅ Identify gaps between current and target APS levels
-- ✅ Draft compelling self-assessment responses
+| Feature | Description |
+|---------|-------------|
+| 📝 **Write Goals** | Create SMART performance goals aligned to ILS |
+| 📊 **Gap Analysis** | Compare your capabilities to target APS levels |
+| ✍️ **Draft Evidence** | Structure STAR examples for self-assessments |
+| 🎯 **Career Planning** | Understand requirements for advancement |
+| 🔍 **ILS Guidance** | Get answers grounded in official frameworks |
 
-The assistant uses **Cognee RAG** (Retrieval-Augmented Generation) to ground all responses in the official ILS framework documents, ensuring accurate and relevant guidance.
+### Powered by AI + Official Frameworks
+
+The assistant uses:
+- **GPT-4o** for intelligent conversation
+- **Cognee RAG** for retrieval from ILS documents
+- **Knowledge Graph** for understanding APS level relationships
 
 ---
 
-## 📖 Getting Started
+## 📋 All Wiki Pages
 
-1. **New Users**: Start with the [[User Guide]]
-2. **Developers**: Check the [[Architecture Overview]]
-3. **Deploying**: See the [[Deployment Guide]]
+| Page | Category | Description |
+|------|----------|-------------|
+| [[User-Guide]] | Users | How to use the assistant effectively |
+| [[Example-Prompts]] | Users | Sample prompts for every use case |
+| [[FAQ]] | Users | Common questions answered |
+| [[Neon-Database-Setup]] | Setup | Complete Neon Postgres setup guide |
+| [[OpenAI-Setup]] | Setup | OpenAI API key configuration |
+| [[Document-Ingestion]] | Setup | Adding documents to knowledge base |
+| [[Architecture-Overview]] | Developers | System architecture and design |
+| [[Cognee-RAG-Engine]] | Developers | RAG engine technical details |
+| [[Mobile-Responsiveness]] | Design | Responsive design documentation |
+
+---
+
+## 🆘 Need Help?
+
+1. **Check the [[FAQ]]** for common questions
+2. **Search this wiki** for specific topics
+3. **Create an issue** on GitHub for bugs or feature requests
+4. **Review [[Example-Prompts]]** for inspiration
+
+---
+
+<p align="center">
+  Made with ❤️ for the Australian Public Service
+</p>
 
