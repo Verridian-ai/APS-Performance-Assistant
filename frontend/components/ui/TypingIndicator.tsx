@@ -16,17 +16,17 @@ export function TypingIndicator({ className, showAvatar = true }: TypingIndicato
       {showAvatar && <AssistantAvatar />}
       <div className="flex items-center gap-1.5 py-3 px-4 rounded-2xl glass-card">
         <motion.span
-          className="h-2 w-2 rounded-full bg-violet-500"
+          className="h-2 w-2 rounded-full bg-primary"
           animate={{ scale: [1, 1.2, 1], opacity: [0.5, 1, 0.5] }}
           transition={{ duration: 1, repeat: Infinity, delay: 0 }}
         />
         <motion.span
-          className="h-2 w-2 rounded-full bg-violet-500"
+          className="h-2 w-2 rounded-full bg-primary"
           animate={{ scale: [1, 1.2, 1], opacity: [0.5, 1, 0.5] }}
           transition={{ duration: 1, repeat: Infinity, delay: 0.2 }}
         />
         <motion.span
-          className="h-2 w-2 rounded-full bg-violet-500"
+          className="h-2 w-2 rounded-full bg-primary"
           animate={{ scale: [1, 1.2, 1], opacity: [0.5, 1, 0.5] }}
           transition={{ duration: 1, repeat: Infinity, delay: 0.4 }}
         />
@@ -43,7 +43,7 @@ export function ThinkingIndicator({ className }: { className?: string }) {
         <AssistantAvatar />
         {/* Pulsing glow ring */}
         <motion.div
-          className="absolute inset-0 rounded-xl bg-gradient-to-r from-violet-500 to-purple-500 blur-md"
+          className="absolute inset-0 rounded-xl bg-gradient-to-r from-primary to-amber-500 blur-md"
           animate={{ opacity: [0.3, 0.6, 0.3], scale: [1, 1.1, 1] }}
           transition={{ duration: 2, repeat: Infinity }}
         />
@@ -54,10 +54,10 @@ export function ThinkingIndicator({ className }: { className?: string }) {
             animate={{ rotate: 360 }}
             transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
           >
-            <Brain className="h-4 w-4 text-violet-400" />
+            <Brain className="h-4 w-4 text-primary" />
           </motion.div>
           <span>Thinking deeply...</span>
-          <Sparkles className="h-3 w-3 text-violet-400" />
+          <Sparkles className="h-3 w-3 text-primary" />
         </div>
         <motion.div
           className="h-4 w-48 rounded-lg glass"
