@@ -25,7 +25,7 @@ export default function Dashboard() {
         <div className="absolute bottom-0 left-0 w-72 h-72 bg-accent/10 rounded-full blur-3xl" />
       </div>
 
-      <div className="max-w-6xl mx-auto p-6 lg:p-8 relative z-10">
+      <div className="max-w-6xl mx-auto p-4 sm:p-6 lg:p-8 relative z-10 safe-area-inset">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: -10 }}
@@ -65,10 +65,10 @@ export default function Dashboard() {
         </motion.div>
 
         {/* Stats Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-8">
-          <StatCard delay={0.1} title="Active Goals" value="0" icon={<BarChart2 className="h-7 w-7 text-primary" />} change="Set your first performance goal" />
-          <StatCard delay={0.2} title="Completed" value="0" icon={<CheckCircle className="h-7 w-7 text-emerald-400" />} change="No completed goals yet" />
-          <StatCard delay={0.3} title="Assessments" value="0" icon={<Files className="h-7 w-7 text-secondary" />} change="Start your self-assessment" />
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-4 mb-6 sm:mb-8">
+          <StatCard delay={0.1} title="Active Goals" value="0" icon={<BarChart2 className="h-6 sm:h-7 w-6 sm:w-7 text-primary" />} change="Set your first performance goal" />
+          <StatCard delay={0.2} title="Completed" value="0" icon={<CheckCircle className="h-6 sm:h-7 w-6 sm:w-7 text-emerald-400" />} change="No completed goals yet" />
+          <StatCard delay={0.3} title="Assessments" value="0" icon={<Files className="h-6 sm:h-7 w-6 sm:w-7 text-secondary" />} change="Start your self-assessment" />
         </div>
 
         {/* Empty State */}
@@ -136,14 +136,14 @@ function StatCard({
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay }}
-      className="glass-card p-5 rounded-2xl hover:scale-[1.02] transition-all duration-300"
+      className="glass-card p-4 sm:p-5 rounded-2xl hover:scale-[1.02] transition-all duration-300 active:scale-[0.98] touch-manipulation"
     >
-      <div className="flex items-center justify-between mb-3">
-        <div className="flex h-12 w-12 items-center justify-center rounded-xl glass">{icon}</div>
-        <span className="text-3xl font-bold gradient-text">{value}</span>
+      <div className="flex items-center justify-between mb-2 sm:mb-3">
+        <div className="flex h-10 sm:h-12 w-10 sm:w-12 items-center justify-center rounded-xl glass">{icon}</div>
+        <span className="text-2xl sm:text-3xl font-bold gradient-text">{value}</span>
       </div>
-      <h3 className="font-medium">{title}</h3>
-      <p className="text-xs text-muted-foreground mt-1">{change}</p>
+      <h3 className="font-medium text-sm sm:text-base">{title}</h3>
+      <p className="text-xs text-muted-foreground mt-1 line-clamp-2">{change}</p>
     </motion.div>
   );
 }

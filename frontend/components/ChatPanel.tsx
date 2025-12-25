@@ -183,7 +183,7 @@ export function ChatPanel({ onOpenCanvas, conversationId }: ChatPanelProps) {
       {/* Messages Area */}
       <div className="flex-1 overflow-y-auto">
         {hasMessages ? (
-          <div className="max-w-3xl mx-auto px-4 py-6 space-y-6">
+          <div className="max-w-3xl mx-auto px-2 sm:px-4 py-4 sm:py-6 space-y-4 sm:space-y-6">
             <AnimatePresence initial={false}>
               {localMessages.map((message) => (
                 <MessageBubble
@@ -213,7 +213,7 @@ export function ChatPanel({ onOpenCanvas, conversationId }: ChatPanelProps) {
       </div>
 
       {/* Input Area */}
-      <div className="p-4">
+      <div className="p-2 sm:p-4 pb-safe">
         <div className="max-w-3xl mx-auto">
           <div
             className={cn(
@@ -399,7 +399,7 @@ function MessageBubble({ message, onArtifactClick }: MessageBubbleProps) {
           className={cn(
             "rounded-2xl px-4 py-3 text-sm leading-relaxed",
             isUser
-              ? "bg-gradient-to-r from-violet-500 to-purple-600 text-white max-w-[85%] shadow-lg shadow-violet-500/20"
+              ? "bg-gradient-to-br from-primary to-amber-600 text-primary-foreground max-w-[85%] shadow-lg shadow-primary/20"
               : "glass-card max-w-full"
           )}
         >

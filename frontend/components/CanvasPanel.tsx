@@ -58,7 +58,7 @@ export function CanvasPanel({ onClose }: CanvasPanelProps) {
           </Button>
           <Button
             size="sm"
-            className="text-xs gap-1.5 bg-gradient-to-r from-violet-500 to-purple-600 border-0 shadow-lg shadow-violet-500/20"
+            className="text-xs gap-1.5 bg-gradient-to-br from-primary to-amber-600 border-0 shadow-lg shadow-primary/20"
           >
             <Download className="h-4 w-4" />
             Export

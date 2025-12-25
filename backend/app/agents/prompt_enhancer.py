@@ -15,8 +15,8 @@ class PromptEnhancerResponse(BaseModel):
 class EnhancerDeps(BaseModel):
     draft_prompt: str
 
-# Define the Agent
-model_id = os.environ.get("LLM_MODEL", "openai/google/gemini-pro-1.5")
+# Define the Agent - use gpt-4o as default, same as main agent
+model_id = os.environ.get("LLM_MODEL", "gpt-4o")
 
 enhancer_agent = Agent[EnhancerDeps, PromptEnhancerResponse](
     model=model_id

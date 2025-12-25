@@ -28,7 +28,7 @@ export async function POST(request: NextRequest) {
 
     // Try to call the backend API
     try {
-      const backendResponse = await fetch(`${BACKEND_URL}/api/chat/simple`, {
+      const backendResponse = await fetch(`${BACKEND_URL}/api/chat`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -39,6 +39,8 @@ export async function POST(request: NextRequest) {
       if (backendResponse.ok) {
         const data: ChatResponse = await backendResponse.json();
         return NextResponse.json(data);
+      } else {
+        console.log(`Backend returned status ${backendResponse.status}, using fallback`);
       }
     } catch (backendError) {
       console.log("Backend not available, using fallback response");

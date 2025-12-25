@@ -29,7 +29,7 @@ export default function HomePage() {
   }
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-center p-6 relative overflow-hidden">
+    <main className="flex min-h-screen flex-col items-center justify-center p-4 sm:p-6 relative overflow-hidden safe-area-inset">
       {/* Circuit pattern background */}
       <CircuitLines className="opacity-50" />
 
@@ -69,10 +69,10 @@ export default function HomePage() {
 
         {/* Title */}
         <div>
-          <h1 className="text-5xl font-bold tracking-tight mb-4">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold tracking-tight mb-4">
             <span className="gradient-text-gold">APS Performance Assistant</span>
           </h1>
-          <p className="text-lg text-muted-foreground max-w-xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg text-muted-foreground max-w-xl mx-auto leading-relaxed px-4 sm:px-0">
             Your AI-powered companion for Australian Public Service career advancement,
             KPI achievement, and performance excellence.
           </p>
